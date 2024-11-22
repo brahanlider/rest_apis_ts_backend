@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "outDir": "./dist", // carpeta de salida
+    "rootDir": "./src", // carpeta raíz
+    "lib": ["esnext"], // librería moderna
+    // Class constructor Model cannot be invoked without 'new'
+    "target": "ESNext",
+    "moduleResolution": "NodeNext",
+    "module": "NodeNext",
+    //
+    "strict": false, // sin tipado estricto
+    "sourceMap": true, // para depurar código
+    "esModuleInterop": true, // interop con ES Modules
+    "declaration": true, // generar declaraciones
+    //PARA CREAR MODELOS DE BASE DE DATOS
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+    //
+  },
+  "include": ["src/**/*.ts"], // incluir archivos .ts
+  "exclude": ["src/**/*test.ts"] // excluyre archicos test.ts
+}

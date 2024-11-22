@@ -1,0 +1,28 @@
+INSTALL
+(v.63)
+npm install --save sequelize 
+npm install --save pg pg-hstore
+
+npm i dotenv
+npm i colors (para el terminal)
+
+(modelos de base de datos)
+npm i sequelize-typescript
+
+INSTALL TESTING
+npm i -D supertest @types/supertest jest @types/jest ts-jest
+npx ts-jest config:init
+
+INSTALL DOCUMENTAR API
+npm i swagger-jsdoc swagger-ui-express
+npm i -D @types/swagger-jsdoc @types/swagger-ui-express
+
+INSTALL (ultimo conectando con frontend)
+npm i cors
+npm i -D @types/cors
+
+npm i morgan
+npm i --save-dev @types/morgan
+
+
+__________________________________________________________
