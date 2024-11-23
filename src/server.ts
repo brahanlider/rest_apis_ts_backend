@@ -30,27 +30,17 @@ connectDB();
 // JSDoc:  Instancia de express
 const server = express();
 // *-----------------CORS--------------------------
-const allowedOrigins = [
-  process.env.FRONTEND_URL, // Dominio principal de tu frontend
-  "https://vercel.app", // Dominio genérico de Vercel
-];
-
-//Permitir conexiones
-const corsOptions: CorsOptions = {
-  //localhoost QUIEN ENVIA PETICION =origin | callback=> PERMITIR O DENEGAR CONEXION
-  origin: function (origin, callback) {
-    // console.log(origin); //==>conecta con base de datos
-    // if (origin === process.env.FRONTEND_URL) {
-    if (allowedOrigins.includes(origin) || !origin) {
-      // console.log("Permitir.....");
-      callback(null, true);
-    } else {
-      // console.log("denegar");
-      callback(new Error("Error de CORS"));
-    }
-  },
-};
-server.use(cors(corsOptions));
+// Permitir conexiones
+const corsOptions : CorsOptions = {
+  origin: function(origin, callback) {
+      if(origin === process.env.FRONTEND_URL) {
+          callback(null, true)
+      } else {
+          callback(new Error('Error de CORS')) 
+      }
+  }
+}
+server.use(cors(corsOptions))
 
 // Leer datos de formularios (middleware)
 server.use(express.json());
